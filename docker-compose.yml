@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  sonarqube:
+    image: sonarqube
+    expose:
+      - 9000
+    ports:
+      - "127.0.0.1:9001:9000"
+    networks:
+      - sonarnet
+    environment:
+      - SONARQUBE_JDBC_USERNAME=sonar
+      - SONARQUBE_JDBC_PASSWORD=sonar
+networks:
+  sonarnet:
+
+
